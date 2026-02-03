@@ -118,7 +118,7 @@
 
     <section
       id="inicio"
-      class="hero-bg h-screen flex flex-col items-center justify-center text-center px-4 relative"
+      class="hero-bg min-h-screen flex flex-col items-center justify-center text-center px-4 relative py-20"
     >
       <div class="max-w-4xl text-white z-10 mt-10">
         <h1
@@ -147,9 +147,12 @@
         </div>
       </div>
 
-      <a href="#buscador" class="absolute bottom-10 animate-bounce text-white/70 hover:text-white transition cursor-pointer z-20 p-2">
-        <i class="ph ph-caret-double-down text-4xl"></i>
-      </a>
+      <a 
+  href="#buscador" 
+  class="relative mt-12 md:absolute md:bottom-10 md:mt-0 animate-bounce text-white/70 hover:text-white transition cursor-pointer z-20 p-2"
+>
+    <i class="ph ph-caret-double-down text-4xl"></i>
+</a>
     </section>
 
     <section id="buscador" class="bg-gray-50 pt-16 pb-8 border-b border-gray-200">
@@ -1085,7 +1088,4 @@
       });
     </script>
   </body>
-
 </html>
-
-
