@@ -4,9 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EliteAuto | Concesionaria Premium</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
-    <link rel="shortcut icon" href="favicon_io/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="shortcut icon"
+      href="/favicon_io/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon_io/apple-touch-icon.png"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <style>
@@ -18,7 +31,7 @@
         background-position: center;
         background-attachment: fixed;
       }
-      
+
       /* Clase para la transición del navbar */
       .nav-scrolled {
         background-color: rgba(255, 255, 255, 1) !important;
@@ -26,28 +39,26 @@
         padding-top: 0.5rem !important;
         padding-bottom: 0.5rem !important;
       }
-      
+
       .nav-scrolled .nav-text {
         color: #0f172a !important; /* slate-900 */
       }
-      
+
       .nav-scrolled .nav-logo-icon {
         color: #4f46e5 !important; /* indigo-600 */
       }
     </style>
   </head>
   <body class="bg-gray-50 text-slate-800 font-sans antialiased">
-    
-    <nav
-      class="fixed w-full z-50 transition-all duration-500 py-6"
-      id="navbar"
-    >
+    <nav class="fixed w-full z-50 transition-all duration-500 py-6" id="navbar">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-12">
-          
           <a href="#inicio" class="flex items-center group cursor-pointer">
-            <i class="ph-fill ph-car text-3xl text-white nav-logo-icon transition-colors mr-2 group-hover:scale-110 duration-300"></i>
-            <span class="font-bold text-2xl tracking-tight text-white nav-text transition-colors"
+            <i
+              class="ph-fill ph-car text-3xl text-white nav-logo-icon transition-colors mr-2 group-hover:scale-110 duration-300"
+            ></i>
+            <span
+              class="font-bold text-2xl tracking-tight text-white nav-text transition-colors"
               >EliteAuto</span
             >
           </a>
@@ -111,7 +122,10 @@
           >Contacto</a
         >
         <button
-          onclick="openSellModal(); closeMobileMenu();"
+          onclick="
+            openSellModal();
+            closeMobileMenu();
+          "
           class="w-full mt-2 bg-indigo-600 text-white px-5 py-3 rounded-lg font-bold hover:bg-indigo-700 transition shadow-lg"
         >
           Vender
@@ -127,107 +141,133 @@
         <h1
           class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight drop-shadow-2xl leading-tight"
         >
-          Tu próximo viaje <br class="hidden md:block" /> comienza aquí
+          Tu próximo viaje <br class="hidden md:block" />
+          comienza aquí
         </h1>
         <p
           class="text-lg md:text-2xl text-gray-100 mb-10 font-light drop-shadow-md max-w-2xl mx-auto"
         >
-          Calidad garantizada, financiación a medida y la mejor atención del mercado.
+          Calidad garantizada, financiación a medida y la mejor atención del
+          mercado.
         </p>
 
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full px-4">
-            <a href="#buscador" 
-            class="w-full sm:w-auto min-w-[220px] flex items-center justify-center gap-3 bg-white text-slate-900 font-bold px-8 py-4 rounded-full hover:bg-gray-100 transition transform hover:scale-105 shadow-2xl text-lg">
-                <i class="ph-bold ph-magnifying-glass text-xl"></i>
-                Comprar Vehículo
-            </a>
+        <div
+          class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full px-4"
+        >
+          <a
+            href="#buscador"
+            class="w-full sm:w-auto min-w-[220px] flex items-center justify-center gap-3 bg-white text-slate-900 font-bold px-8 py-4 rounded-full hover:bg-gray-100 transition transform hover:scale-105 shadow-2xl text-lg"
+          >
+            <i class="ph-bold ph-magnifying-glass text-xl"></i>
+            Comprar Vehículo
+          </a>
 
-            <button onclick="openSellModal()" 
-                    class="w-full sm:w-auto min-w-[220px] flex items-center justify-center gap-3 bg-white text-slate-900 font-bold px-8 py-4 rounded-full hover:bg-gray-100 transition transform hover:scale-105 shadow-2xl text-lg border-2 border-white">
-                <i class="ph-bold ph-currency-dollar text-xl"></i>
-                Vender Vehículo
-            </button>
+          <button
+            onclick="openSellModal()"
+            class="w-full sm:w-auto min-w-[220px] flex items-center justify-center gap-3 bg-white text-slate-900 font-bold px-8 py-4 rounded-full hover:bg-gray-100 transition transform hover:scale-105 shadow-2xl text-lg border-2 border-white"
+          >
+            <i class="ph-bold ph-currency-dollar text-xl"></i>
+            Vender Vehículo
+          </button>
         </div>
       </div>
 
-      <a 
-  href="#buscador" 
-  class="relative mt-12 md:absolute md:bottom-10 md:mt-0 animate-bounce text-white/70 hover:text-white transition cursor-pointer z-20 p-2"
->
-    <i class="ph ph-caret-double-down text-4xl"></i>
-</a>
+      <a
+        href="#buscador"
+        class="relative mt-12 md:absolute md:bottom-10 md:mt-0 animate-bounce text-white/70 hover:text-white transition cursor-pointer z-20 p-2"
+      >
+        <i class="ph ph-caret-double-down text-4xl"></i>
+      </a>
     </section>
 
-    <section id="buscador" class="bg-gray-50 pt-16 pb-8 border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-8">
-                <h2 class="text-slate-900 text-3xl font-bold">Encuentra tu vehículo ideal</h2>
-                <p class="text-slate-500 mt-2">Utiliza los filtros para buscar en nuestro stock</p>
-            </div>
-
-            <div class="bg-white p-6 md:p-8 rounded-2xl shadow-xl border border-gray-100 grid grid-cols-1 md:grid-cols-12 gap-4 items-end">
-                <div class="md:col-span-4">
-                  <label class="block text-xs font-bold text-indigo-600 uppercase mb-2 ml-1"
-                    >¿Qué buscas?</label
-                  >
-                  <div class="relative">
-                    <i
-                      class="ph ph-magnifying-glass absolute left-4 top-3.5 text-gray-400 text-lg"
-                    ></i>
-                    <input
-                      type="text"
-                      id="searchInput"
-                      placeholder="Marca o modelo..."
-                      class="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:outline-none text-base"
-                    />
-                  </div>
-                </div>
-        
-                <div class="md:col-span-3">
-                  <label class="block text-xs font-bold text-gray-500 uppercase mb-2 ml-1"
-                    >Categoría</label
-                  >
-                  <select
-                    id="tipoFilter"
-                    class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 appearance-none text-base cursor-pointer"
-                  ></select>
-                </div>
-        
-                <div class="md:col-span-3">
-                  <label class="block text-xs font-bold text-gray-500 uppercase mb-2 ml-1"
-                    >Año desde</label
-                  >
-                  <select
-                    id="yearFromFilter"
-                    class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 appearance-none text-base cursor-pointer"
-                  ></select>
-                </div>
-        
-                <div class="md:col-span-2">
-                  <button
-                    onclick="applyFilters()"
-                    class="w-full bg-indigo-600 text-white font-bold h-[50px] rounded-xl hover:bg-indigo-700 transition flex justify-center items-center gap-2 shadow-lg uppercase text-xs tracking-wider"
-                  >
-                    <i class="ph-bold ph-magnifying-glass text-lg"></i> Buscar
-                  </button>
-                </div>
-            </div>
-            
-            <div class="flex justify-end mt-3 pr-2">
-                <button
-                  onclick="clearFilters()"
-                  class="text-xs uppercase tracking-widest text-gray-500 hover:text-indigo-600 transition flex items-center gap-1 font-semibold"
-                >
-                  <i class="ph ph-arrow-counter-clockwise"></i> Limpiar filtros
-                </button>
-            </div>
+    <section
+      id="buscador"
+      class="bg-gray-50 pt-16 pb-8 border-b border-gray-200"
+    >
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-8">
+          <h2 class="text-slate-900 text-3xl font-bold">
+            Encuentra tu vehículo ideal
+          </h2>
+          <p class="text-slate-500 mt-2">
+            Utiliza los filtros para buscar en nuestro stock
+          </p>
         </div>
+
+        <div
+          class="bg-white p-6 md:p-8 rounded-2xl shadow-xl border border-gray-100 grid grid-cols-1 md:grid-cols-12 gap-4 items-end"
+        >
+          <div class="md:col-span-4">
+            <label
+              class="block text-xs font-bold text-indigo-600 uppercase mb-2 ml-1"
+              >¿Qué buscas?</label
+            >
+            <div class="relative">
+              <i
+                class="ph ph-magnifying-glass absolute left-4 top-3.5 text-gray-400 text-lg"
+              ></i>
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Marca o modelo..."
+                class="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:outline-none text-base"
+              />
+            </div>
+          </div>
+
+          <div class="md:col-span-3">
+            <label
+              class="block text-xs font-bold text-gray-500 uppercase mb-2 ml-1"
+              >Categoría</label
+            >
+            <select
+              id="tipoFilter"
+              class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 appearance-none text-base cursor-pointer"
+            ></select>
+          </div>
+
+          <div class="md:col-span-3">
+            <label
+              class="block text-xs font-bold text-gray-500 uppercase mb-2 ml-1"
+              >Año desde</label
+            >
+            <select
+              id="yearFromFilter"
+              class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 appearance-none text-base cursor-pointer"
+            ></select>
+          </div>
+
+          <div class="md:col-span-2">
+            <button
+              onclick="applyFilters()"
+              class="w-full bg-indigo-600 text-white font-bold h-[50px] rounded-xl hover:bg-indigo-700 transition flex justify-center items-center gap-2 shadow-lg uppercase text-xs tracking-wider"
+            >
+              <i class="ph-bold ph-magnifying-glass text-lg"></i> Buscar
+            </button>
+          </div>
+        </div>
+
+        <div class="flex justify-end mt-3 pr-2">
+          <button
+            onclick="clearFilters()"
+            class="text-xs uppercase tracking-widest text-gray-500 hover:text-indigo-600 transition flex items-center gap-1 font-semibold"
+          >
+            <i class="ph ph-arrow-counter-clockwise"></i> Limpiar filtros
+          </button>
+        </div>
+      </div>
     </section>
 
     <section id="inventario" class="max-w-7xl mx-auto px-4 pb-20 pt-10">
-      <div class="flex flex-col md:flex-row justify-between items-end mb-10 border-b border-gray-200 pb-4">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900">Vehículos Destacados</h2>
-        <span id="resultCount" class="text-gray-500 font-medium mt-2 md:mt-0">Cargando catálogo...</span>
+      <div
+        class="flex flex-col md:flex-row justify-between items-end mb-10 border-b border-gray-200 pb-4"
+      >
+        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900">
+          Vehículos Destacados
+        </h2>
+        <span id="resultCount" class="text-gray-500 font-medium mt-2 md:mt-0"
+          >Cargando catálogo...</span
+        >
       </div>
 
       <div id="loader" class="flex justify-center py-20">
@@ -332,13 +372,14 @@
             </button>
 
             <div class="grid grid-cols-1 md:grid-cols-2">
-              <div class="bg-gray-100 p-4 md:p-0">
+              <div class="bg-white p-4 md:p-0">
                 <div class="h-64 md:h-96 w-full overflow-hidden relative">
                   <img
                     id="modalMainImage"
                     src=""
                     alt="Auto"
-                    class="w-full h-full object-cover"
+                    class="w-full h-full object-cover cursor-zoom-in"
+                    onclick="openFullscreen()"
                   />
                 </div>
                 <div
@@ -611,7 +652,7 @@
                         name="combustibleAuto"
                         class="w-full p-3 border border-indigo-200 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none bg-white transition"
                         placeholder="Ej: Nafta, Diesel"
-                      >
+                      />
                     </div>
                     <div>
                       <label class="block text-sm font-bold text-slate-700 mb-1"
@@ -654,12 +695,8 @@
                         required
                         class="w-full p-3 border-2 border-indigo-300 bg-white rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none transition font-bold text-indigo-900"
                       >
-                        <option value="Solo Venta">
-                          Solo quiero vender
-                        </option>
-                        <option value="Permuta">
-                          Quiero permutar 
-                        </option>
+                        <option value="Solo Venta">Solo quiero vender</option>
+                        <option value="Permuta">Quiero permutar</option>
                       </select>
                     </div>
 
@@ -698,7 +735,7 @@
     </div>
 
     <a
-      href="https://wa.me/5491112345678?text=Hola!%20Quisiera%20hacer%20una%20consulta."
+      href="https://wa.me/5493764102637?text=Hola!%20Quisiera%20hacer%20una%20consulta."
       target="_blank"
       class="fixed bottom-6 right-6 z-40 bg-green-600 text-white w-14 h-14 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 flex items-center justify-center group"
       aria-label="Chat on WhatsApp"
@@ -711,6 +748,23 @@
       </span>
     </a>
 
+    <div
+      id="fullscreenOverlay"
+      class="fixed inset-0 z-[100] hidden bg-black/95 flex items-center justify-center p-4"
+    >
+      <button
+        onclick="closeFullscreen()"
+        class="absolute top-6 right-6 text-white hover:text-gray-300 transition z-[110]"
+      >
+        <i class="ph-bold ph-x text-4xl"></i>
+      </button>
+      <img
+        id="fullscreenImg"
+        src=""
+        class="max-w-full max-h-full object-contain shadow-2xl scale-95 transition-transform duration-300"
+      />
+    </div>
+
     <script>
       // *** PEGA TU URL DE APPS SCRIPT AQUÍ ***
       const APPS_SCRIPT_URL =
@@ -721,15 +775,15 @@
       // Inicializar
       document.addEventListener("DOMContentLoaded", () => {
         fetchData();
-        
+
         // --- LÓGICA DE NAVBAR SCROLL ---
-        const nav = document.getElementById('navbar');
-        window.onscroll = function() {
-            if (window.scrollY > 50) {
-                nav.classList.add('nav-scrolled');
-            } else {
-                nav.classList.remove('nav-scrolled');
-            }
+        const nav = document.getElementById("navbar");
+        window.onscroll = function () {
+          if (window.scrollY > 50) {
+            nav.classList.add("nav-scrolled");
+          } else {
+            nav.classList.remove("nav-scrolled");
+          }
         };
       });
 
@@ -739,7 +793,7 @@
         const iconOpen = document.getElementById("menuIconOpen");
         const iconClose = document.getElementById("menuIconClose");
         menu.classList.toggle("hidden");
-        
+
         // Cambiar color del ícono según estado
         if (menu.classList.contains("hidden")) {
           iconOpen.classList.remove("hidden");
@@ -748,7 +802,7 @@
           iconOpen.classList.add("hidden");
           iconClose.classList.remove("hidden");
           // Forzar color oscuro en ícono cerrar
-          iconClose.style.color = "#0f172a"; 
+          iconClose.style.color = "#0f172a";
         }
       }
 
@@ -1045,51 +1099,98 @@
         resetFormFeedback();
 
         try {
-            const formData = new FormData(sellForm);
-            const queryString = new URLSearchParams();
-            
-            queryString.append('nombre', formData.get('nombre'));
-            queryString.append('apellido', formData.get('apellido'));
-            queryString.append('email', formData.get('email'));
-            queryString.append('telefono', formData.get('telefono'));
-            queryString.append('ciudad', formData.get('ciudad'));
-            queryString.append('provincia', formData.get('provincia'));
-            
-            const marcaModelo = formData.get('marcaModelo').split(' ');
-            queryString.append('marcaAuto', marcaModelo[0] || '');
-            queryString.append('modeloAuto', marcaModelo.slice(1).join(' ') || '');
-            
-            queryString.append('anioAuto', formData.get('anioAuto'));
-            queryString.append('kmAuto', formData.get('kmAuto'));
-            queryString.append('combustibleAuto', formData.get('combustibleAuto'));
-            queryString.append('transmisionAuto', formData.get('transmisionAuto'));
-            queryString.append('precioAuto', formData.get('precioAuto'));
-            queryString.append('tipoOperacion', formData.get('tipoOperacion'));
-            queryString.append('descripcionAuto', formData.get('descripcionAuto'));
+          const formData = new FormData(sellForm);
+          const queryString = new URLSearchParams();
 
-            await fetch(APPS_SCRIPT_URL + '?' + queryString.toString(), {
-                method: 'POST',
-                mode: 'no-cors'
-            });
+          queryString.append("nombre", formData.get("nombre"));
+          queryString.append("apellido", formData.get("apellido"));
+          queryString.append("email", formData.get("email"));
+          queryString.append("telefono", formData.get("telefono"));
+          queryString.append("ciudad", formData.get("ciudad"));
+          queryString.append("provincia", formData.get("provincia"));
 
-            sellForm.reset();
-            formFeedback.innerText = "¡Solicitud enviada con éxito!";
-            formFeedback.className = 'rounded-lg p-4 text-center text-sm font-bold bg-green-100 text-green-800';
-            formFeedback.classList.remove('hidden');
+          const marcaModelo = formData.get("marcaModelo").split(" ");
+          queryString.append("marcaAuto", marcaModelo[0] || "");
+          queryString.append(
+            "modeloAuto",
+            marcaModelo.slice(1).join(" ") || "",
+          );
 
-            setTimeout(() => { closeSellModal(); resetFormFeedback(); }, 3000);
+          queryString.append("anioAuto", formData.get("anioAuto"));
+          queryString.append("kmAuto", formData.get("kmAuto"));
+          queryString.append(
+            "combustibleAuto",
+            formData.get("combustibleAuto"),
+          );
+          queryString.append(
+            "transmisionAuto",
+            formData.get("transmisionAuto"),
+          );
+          queryString.append("precioAuto", formData.get("precioAuto"));
+          queryString.append("tipoOperacion", formData.get("tipoOperacion"));
+          queryString.append(
+            "descripcionAuto",
+            formData.get("descripcionAuto"),
+          );
 
+          await fetch(APPS_SCRIPT_URL + "?" + queryString.toString(), {
+            method: "POST",
+            mode: "no-cors",
+          });
+
+          sellForm.reset();
+          formFeedback.innerText = "¡Solicitud enviada con éxito!";
+          formFeedback.className =
+            "rounded-lg p-4 text-center text-sm font-bold bg-green-100 text-green-800";
+          formFeedback.classList.remove("hidden");
+
+          setTimeout(() => {
+            closeSellModal();
+            resetFormFeedback();
+          }, 3000);
         } catch (error) {
-            console.error("Error al enviar:", error);
-            formFeedback.innerText = "Error de conexión. Intenta nuevamente.";
-            formFeedback.className = 'rounded-lg p-4 text-center text-sm font-bold bg-red-100 text-red-800';
-            formFeedback.classList.remove('hidden');
+          console.error("Error al enviar:", error);
+          formFeedback.innerText = "Error de conexión. Intenta nuevamente.";
+          formFeedback.className =
+            "rounded-lg p-4 text-center text-sm font-bold bg-red-100 text-red-800";
+          formFeedback.classList.remove("hidden");
         } finally {
-            btnSubmit.disabled = false;
-            btnSubmit.innerHTML = originalBtnText;
+          btnSubmit.disabled = false;
+          btnSubmit.innerHTML = originalBtnText;
+        }
+      });
+
+      // Función para abrir la imagen en grande
+      function openFullscreen() {
+        const mainImgSrc = document.getElementById("modalMainImage").src;
+        const overlay = document.getElementById("fullscreenOverlay");
+        const fullImg = document.getElementById("fullscreenImg");
+
+        fullImg.src = mainImgSrc;
+        overlay.classList.remove("hidden");
+        // Pequeño delay para la animación de entrada
+        setTimeout(() => {
+          fullImg.classList.remove("scale-95");
+          fullImg.classList.add("scale-100");
+        }, 10);
+      }
+
+      // Función para cerrar el visor
+      function closeFullscreen() {
+        const overlay = document.getElementById("fullscreenOverlay");
+        const fullImg = document.getElementById("fullscreenImg");
+
+        fullImg.classList.add("scale-95");
+        overlay.classList.add("hidden");
+      }
+
+      // Cerrar con la tecla Escape
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          closeFullscreen();
+          closeModal();
         }
       });
     </script>
   </body>
 </html>
-
