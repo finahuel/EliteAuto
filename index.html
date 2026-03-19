@@ -21,6 +21,10 @@
       href="/favicon_io/apple-touch-icon.png"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"
+    />
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <style>
       .hero-bg {
@@ -263,7 +267,7 @@
         class="flex flex-col md:flex-row justify-between items-end mb-10 border-b border-gray-200 pb-4"
       >
         <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900">
-          Nuestros Vehiculos
+          Vehículos Destacados
         </h2>
         <span id="resultCount" class="text-gray-500 font-medium mt-2 md:mt-0"
           >Cargando catálogo...</span
@@ -341,7 +345,10 @@
       <div
         class="border-t border-slate-800 pt-8 text-center text-xs text-slate-500"
       >
-        © 2026 EliteAuto. Todos los derechos reservados.
+        <p>© 2026 EliteAuto. Todos los derechos reservados.</p>
+        <a href="https://wa.me/5493764102637?text=Hola,%20vi%20la%20web%20de%20EliteAuto%20y%20me%20gustaría%20consultar%20por%20una%20web" target="_blank" class="block mt-2 hover:text-indigo-400 transition-colors">
+          Desarrollo Web por Italo Nahuel Forneron
+        </a>
       </div>
     </footer>
 
@@ -379,7 +386,7 @@
                     src=""
                     alt="Auto"
                     class="w-full h-full object-cover cursor-zoom-in"
-                    onclick="openFullscreen()"
+                    onclick="openGallery()"
                   />
                 </div>
                 <div
@@ -748,29 +755,13 @@
       </span>
     </a>
 
-    <div
-      id="fullscreenOverlay"
-      class="fixed inset-0 z-[100] hidden bg-black/95 flex items-center justify-center p-4"
-    >
-      <button
-        onclick="closeFullscreen()"
-        class="absolute top-6 right-6 text-white hover:text-gray-300 transition z-[110]"
-      >
-        <i class="ph-bold ph-x text-4xl"></i>
-      </button>
-      <img
-        id="fullscreenImg"
-        src=""
-        class="max-w-full max-h-full object-contain shadow-2xl scale-95 transition-transform duration-300"
-      />
-    </div>
-
     <script>
       // *** PEGA TU URL DE APPS SCRIPT AQUÍ ***
       const APPS_SCRIPT_URL =
         "https://script.google.com/macros/s/AKfycbzwKaiiNnjAPXP3x4aquEtzEyBnL5g_-ZFiJ0Zsct-TBS5hehgczXkdwkR7pqi88OKOPA/exec";
 
       let inventory = [];
+      let currentCarImages = []; // Almacenará las imágenes del auto abierto en el modal
 
       // Inicializar
       document.addEventListener("DOMContentLoaded", () => {
@@ -964,6 +955,9 @@
         const images = rawImages
           .map((url) => url.trim())
           .filter((url) => url.length > 0);
+
+        // Guardamos las imágenes en la variable global para que la galería las pueda usar
+        currentCarImages = images;
 
         const mainImg = document.getElementById("modalMainImage");
         const thumbsContainer = document.getElementById("modalThumbnails");
@@ -1160,37 +1154,45 @@
         }
       });
 
-      // Función para abrir la imagen en grande
-      function openFullscreen() {
-        const mainImgSrc = document.getElementById("modalMainImage").src;
-        const overlay = document.getElementById("fullscreenOverlay");
-        const fullImg = document.getElementById("fullscreenImg");
+      // ==========================================
+      // LÓGICA DE LA GALERÍA DE IMÁGENES (GLightbox)
+      // ==========================================
+      function openGallery() {
+        if (!currentCarImages || currentCarImages.length === 0) {
+          return; // No hacer nada si no hay imágenes
+        }
 
-        fullImg.src = mainImgSrc;
-        overlay.classList.remove("hidden");
-        // Pequeño delay para la animación de entrada
-        setTimeout(() => {
-          fullImg.classList.remove("scale-95");
-          fullImg.classList.add("scale-100");
-        }, 10);
-      }
+        // Encontrar la imagen que se está mostrando para empezar desde ahí
+        const currentImageSrc = document.getElementById("modalMainImage").src;
+        const startIndex = currentCarImages.findIndex(
+          (img) => img === currentImageSrc,
+        );
 
-      // Función para cerrar el visor
-      function closeFullscreen() {
-        const overlay = document.getElementById("fullscreenOverlay");
-        const fullImg = document.getElementById("fullscreenImg");
+        // Crear los elementos que GLightbox necesita
+        const galleryElements = currentCarImages.map((imgUrl) => ({
+          href: imgUrl,
+          type: "image",
+        }));
 
-        fullImg.classList.add("scale-95");
-        overlay.classList.add("hidden");
+        // Inicializar y abrir GLightbox
+        const lightbox = GLightbox({
+          elements: galleryElements,
+          startAt: startIndex >= 0 ? startIndex : 0, // Empezar en la imagen correcta
+          touchNavigation: true, // Habilitar swipe en móviles
+          keyboardNavigation: true, // Habilitar flechas de teclado
+          loop: true, // Permitir navegar de la última a la primera foto
+        });
+
+        lightbox.open();
       }
 
       // Cerrar con la tecla Escape
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") {
-          closeFullscreen();
           closeModal();
         }
       });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
   </body>
 </html>
